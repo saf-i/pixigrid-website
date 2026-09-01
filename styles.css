@@ -295,6 +295,13 @@ p {
   color: var(--color-ash);
 }
 
+.hero-name {
+  margin-bottom: 12px;
+  font-size: clamp(24px, 3.2vw, 34px);
+  font-weight: var(--font-weight-regular);
+  letter-spacing: var(--tracking-display);
+}
+
 .display {
   font-size: clamp(40px, 7.2vw, var(--text-display));
   font-weight: var(--font-weight-regular);
