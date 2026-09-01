@@ -1,0 +1,18 @@
+{
+  "name": "pixigrid-website",
+  "version": "0.1.0",
+  "private": true,
+  "description": "PIXIGRID — AI-first systems studio site",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    "vite": "^5.4.8"
+  }
+}
