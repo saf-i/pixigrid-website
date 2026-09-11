@@ -12,6 +12,19 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   });
 });
 
+// Browsers that block muted autoplay (e.g. Safari Low Power Mode) still get the reel on first interaction
+const reel = document.querySelector(".video-reel");
+if (reel) {
+  const tryPlay = () => {
+    if (!reel.paused) return;
+    reel.play().catch(() => {});
+  };
+  tryPlay();
+  ["pointerdown", "touchstart", "keydown", "scroll"].forEach((type) => {
+    window.addEventListener(type, tryPlay, { once: true, passive: true });
+  });
+}
+
 // Highlight the nav pill for the section currently in view
 if ("IntersectionObserver" in window && navItems.length) {
   const sections = [...navItems].map((item) => document.querySelector(item.getAttribute("href"))).filter(Boolean);
