@@ -4,6 +4,18 @@ Record of design work in the [PixiGrid Figma file](https://www.figma.com/design/
 
 ---
 
+## 2026-09-11 — "new design" page: full landing page layout
+
+- New page **new design** with a [Desktop – 1920](https://www.figma.com/design/fXyWB9nvWmigbDVrRfyWgX/PixiGrid?node-id=125-4) frame (1920 × 7217), built on a 12-column / 24px-gutter layout grid inside a centered 1440px container (240px side margins).
+- Export: [2026-09-11-new-design-desktop-1920.png](2026-09-11-new-design-desktop-1920.png)
+- Sections, top to bottom:
+  1. Nav — PixiGrid wordmark, WORK / PROCESS / SERVICES menu, "Book a call" button
+  2. Hero — "Your design engineer" headline, "Brands, websites and products for AI era startups…" lede, large work-collage image
+  3. Logo wall — "Trusted by enterprises across industries", 6 × 3 logo placeholders
+  4. What we shipped — 3 × 5 grid of project cards
+  5. Design, build and ship — three process cards (Creative direction / Frontend implementation / QA & launch)
+  6. Your partner in every stage — 01 Branding, 02 Websites, 03 Product design, 04 Motion & animation, each with a preview card
+
 ## 2026-09-11 — Frame 50 snapshot (first design sync)
 
 - Exported [Frame 50](https://www.figma.com/design/fXyWB9nvWmigbDVrRfyWgX/PixiGrid?node-id=124-1438) as [2026-09-11-frame-50.png](2026-09-11-frame-50.png) — full-page layout, 2189×7878 on canvas.
