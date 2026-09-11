@@ -4,6 +4,14 @@ Record of design work in the [PixiGrid Figma file](https://www.figma.com/design/
 
 ---
 
+## 2026-09-11 — Desktop – 1921 frame implemented as the live site
+
+- The auto-layout frame [Desktop – 1921](https://www.figma.com/design/fXyWB9nvWmigbDVrRfyWgX/PixiGrid?node-id=124-1892) (1920 × 6223) on the "new design" page is now the site: `index.html`, `styles.css`, `main.js` were rebuilt from it. This replaces the v0.1 "systems studio" site.
+- Section heights in the browser match Figma to within ~2px (hero 1229, logos 416, work 1958, process 566, services 2014).
+- Assets exported from Figma into `public/`: hero "Book a call" arrow icon (`icons/`), the 15 "What we shipped" images (`work/`).
+- **Temporary assets to re-export:** `public/process/*.png` (3 process cards) and `public/services/*.png` (4 service previews) are crops from the full-page export at ~0.57× resolution, because the Figma Starter plan's monthly MCP read limit (20 calls) ran out mid-implementation. Re-export those seven nodes at 2× and drop them in the same paths when reads are available again (plan upgrade or next month).
+- Only the 1920 breakpoint is designed; the CSS has pragmatic fallbacks below 1200px and 720px until the smaller breakpoints exist in Figma.
+
 ## 2026-09-11 — "new design" page: full landing page layout
 
 - New page **new design** with a [Desktop – 1920](https://www.figma.com/design/fXyWB9nvWmigbDVrRfyWgX/PixiGrid?node-id=125-4) frame (1920 × 7217), built on a 12-column / 24px-gutter layout grid inside a centered 1440px container (240px side margins).

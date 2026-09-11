@@ -1,19 +1,5 @@
-const nav = document.querySelector(".nav");
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-const onScroll = () => {
-  nav?.classList.toggle("is-scrolled", window.scrollY > 8);
-};
-
-onScroll();
-window.addEventListener("scroll", onScroll, { passive: true });
-
-if (!reduceMotion) {
-  const cells = document.querySelectorAll(".grid-cell");
-  cells.forEach((cell, i) => {
-    cell.style.animationDelay = `${80 + i * 55}ms`;
-  });
-}
+const navItems = document.querySelectorAll(".pill-nav-item[href^='#']");
 
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   anchor.addEventListener("click", (event) => {
@@ -25,3 +11,20 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     target.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "start" });
   });
 });
+
+// Highlight the nav pill for the section currently in view
+if ("IntersectionObserver" in window && navItems.length) {
+  const sections = [...navItems].map((item) => document.querySelector(item.getAttribute("href"))).filter(Boolean);
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        navItems.forEach((item) => {
+          item.classList.toggle("is-active", item.getAttribute("href") === `#${entry.target.id}`);
+        });
+      });
+    },
+    { rootMargin: "-40% 0px -50% 0px" }
+  );
+  sections.forEach((section) => observer.observe(section));
+}
